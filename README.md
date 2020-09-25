@@ -8,8 +8,8 @@ Sigo aprendiendo `Java`, asi que este repositorio tambien es para ver mi avance 
 
 
 ## Paquete 'com.pronoob.basicos'
-> En este paquete encontraras lo **esencial** de cualquier lenguaje de programacion pero en
+En este paquete encontraras lo **esencial** de cualquier lenguaje de programacion pero en
 codigo `Java`. 
->
-> Este paquete tiene un subpaquete llamado ejemplos, en el cual incluyo codigo usando lo que
+
+Este paquete tiene un subpaquete llamado ejemplos, en el cual incluyo codigo usando lo que
 se vio en el paquete.
