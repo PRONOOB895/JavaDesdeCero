@@ -33,7 +33,7 @@ public class Bucles {
                 System.out.print(secuenciaWhile + ", " + (100-secuenciaWhile)+ ", ");
             }
             else {
-                System.out.println(secuenciaWhile + ", " + 0);
+                System.out.println(secuenciaWhile + ", 0");
             }
 
             secuenciaWhile++;
