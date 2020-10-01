@@ -35,7 +35,7 @@ public class Bucles {
             else {
                 System.out.println(secuenciaWhile + ", 0");
             }
-
+            
             secuenciaWhile++;
         }
 
