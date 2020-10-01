@@ -55,6 +55,6 @@ public class Bucles {
             b = c;
 
             contadorDeRepeticiones++;
-        } while (contadorDeRepeticiones < nDeRepeticiones);
+        } while(contadorDeRepeticiones < nDeRepeticiones);
     }
 }
