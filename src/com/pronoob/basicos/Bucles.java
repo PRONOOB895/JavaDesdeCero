@@ -35,7 +35,7 @@ public class Bucles {
             else {
                 System.out.println(secuenciaWhile + ", 0");
             }
-
+            
             secuenciaWhile++;
         }
 
@@ -55,6 +55,6 @@ public class Bucles {
             b = c;
 
             contadorDeRepeticiones++;
-        } while (contadorDeRepeticiones < nDeRepeticiones);
+        } while(contadorDeRepeticiones < nDeRepeticiones);
     }
 }
