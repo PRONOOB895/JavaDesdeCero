@@ -87,7 +87,7 @@ class Empleado {
 
     public String getDatosDelEmpleado() {
         return "Nombre: " + nombre +
-                " Fecha de ingreso: " + fechaDeIngreso +
+                ", Fecha de ingreso: " + fechaDeIngreso +
                 ", Sueldo: " + sueldo +
                 ", Empleado del mes: " + empleadoDelMes +
                 ", Clave de acceso: " + claveDeAcceso;
