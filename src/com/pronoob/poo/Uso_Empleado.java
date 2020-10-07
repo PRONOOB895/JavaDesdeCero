@@ -139,9 +139,13 @@ public class Uso_Empleado {
         empleados[0].nuevaClaveDeAcceso();
 
         // Un bucle para que me imprima todos los datos del empleado
+        // Tambien quiero subirle un 2% el sueldo a todos
         for (Empleado empleado : empleados) {
+            empleado.subirSueldo(2);
             System.out.println(empleado.getDatosDelEmpleado());
         }
+
+
     }
 }
 
