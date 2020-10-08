@@ -19,37 +19,44 @@ Imaginemos que tenemos una empresa y queremos gestionar nuestro empleados
  */
 
 @SuppressWarnings("all")
-class Empleado {
+// Vamos a heredar todos lo metodos de Persona
+class Empleado extends Persona {
     // Aqui vamos a crear las variables de instancia
     // En otras palabras, donde vamos a guardar lo que nos de el constructor
-    private String nombre, claveDeAcceso;
-    private int sueldo;
+    private String claveDeAcceso, ID;
+    private int contadorID = 1, sueldo;
     private final Date fechaDeIngreso;
 
     // El constructor
     public Empleado(String nombre, int sueldo, Date fechaDeIngreso) {
         // La palabra this nos permite acceder a la variable declarada al principio
         // Sin esta quedaria x = x, eso no tendria sentido
+        super(nombre);
         nuevaClaveDeAcceso();
-        this.nombre = nombre;
         this.sueldo = sueldo;
         this.fechaDeIngreso = fechaDeIngreso;
+        this.ID = getIdentificacion() + ":" + contadorID;
+        contadorID++;
     }
 
     // Otro constructor para el que quiera usar GregorianCalendar
     public Empleado(String nombre, int sueldo, GregorianCalendar fechaEnCalendario) {
+        super(nombre);
         nuevaClaveDeAcceso();
-        this.nombre = nombre;
         this.sueldo = sueldo;
         this.fechaDeIngreso = fechaEnCalendario.getTime();
+        this.ID = getIdentificacion() + ":" + contadorID;
+        contadorID++;
     }
 
     // Aqui va otro constructor para el que no quiera usar la clase GregorianCalendar
     public Empleado(String nombre, int sueldo, int year, int mes, int dia) {
+        super(nombre);
         nuevaClaveDeAcceso();
-        this.nombre = nombre;
         this.sueldo = sueldo;
         this.fechaDeIngreso = new GregorianCalendar(year, mes - 1, dia).getTime();
+        this.ID = getIdentificacion() + ":" + contadorID;
+        contadorID++;
     }
 
     // Aqui declaramos variables que no tengan que ver con el constructor
@@ -60,10 +67,6 @@ class Empleado {
     acceder directamente a las variables, lo que se hacen son metodos que asignan
     y devuelven la variable (Setters y Getters)
      */
-
-    public String getNombre() {
-        return nombre;
-    }
 
     public int getSueldo() {
         return sueldo;
@@ -86,7 +89,7 @@ class Empleado {
     }
 
     public String getDatosDelEmpleado() {
-        return "Nombre: " + nombre +
+        return "Nombre: " + getNombre() +
                 ", Fecha de ingreso: " + fechaDeIngreso +
                 ", Sueldo: " + sueldo +
                 ", Empleado del mes: " + empleadoDelMes +
@@ -99,6 +102,10 @@ class Empleado {
 
     public String getClaveDeAcceso() {
         return claveDeAcceso;
+    }
+
+    public String getID() {
+        return ID;
     }
 
     // No hay setNombre() ya que no deberiamos poder cambiarla
@@ -116,36 +123,6 @@ class Empleado {
         }
 
         this.claveDeAcceso = claveDeAcceso.toString();
-    }
-
-}
-
-public class Uso_Empleado {
-    public static void main(String[] args) {
-        // Voy a crear un array con todos los empleados de mi pequeña empresa
-        Empleado[] empleados = {new Empleado("Felipe", 2000, 2014, 12, 23),
-                new Empleado("Carlos", 1750, 2017, 5, 14),
-                new Empleado("Alfonso", 2100, 2011, 3, 2),
-                new Empleado("David", 1346, 2018, 12, 29)
-        };
-
-        // El empleado del mes es Carlos
-        empleados[1].setEmpleadoDelMes(true);
-
-        // Le voy a subir el sueldo a David por su buen servicio
-        empleados[3].subirSueldo(7);
-
-        // La clave de acceso a la empresa de Felipe esta caducada, voy a generarle una nueva
-        empleados[0].nuevaClaveDeAcceso();
-
-        // Un bucle para que me imprima todos los datos del empleado
-        // Tambien quiero subirle un 2% el sueldo a todos
-        for (Empleado empleado : empleados) {
-            empleado.subirSueldo(2);
-            System.out.println(empleado.getDatosDelEmpleado());
-        }
-
-
     }
 }
 
