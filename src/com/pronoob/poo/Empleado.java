@@ -20,7 +20,7 @@ Imaginemos que tenemos una empresa y queremos gestionar nuestro empleados
 
 @SuppressWarnings("all")
 // Vamos a heredar todos lo metodos de Persona
-class Empleado extends Persona {
+final class Empleado extends Persona {
     // Aqui vamos a crear las variables de instancia
     // En otras palabras, donde vamos a guardar lo que nos de el constructor
     private String claveDeAcceso, ID;
