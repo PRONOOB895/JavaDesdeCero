@@ -20,7 +20,7 @@ Imaginemos que tenemos una empresa y queremos gestionar nuestro empleados
 
 @SuppressWarnings("all")
 // Vamos a heredar todos lo metodos de Persona
-final class Empleado extends Persona {
+public class Empleado extends Persona implements Comparable {
     // Aqui vamos a crear las variables de instancia
     // En otras palabras, donde vamos a guardar lo que nos de el constructor
     private String claveDeAcceso, ID;
@@ -124,6 +124,16 @@ final class Empleado extends Persona {
 
         this.claveDeAcceso = claveDeAcceso.toString();
     }
+
+    @Override
+    public int compareTo(Object o) {
+
+        Empleado empleado = (Empleado) o;
+
+        if (this.sueldo < empleado.sueldo) return -1;
+
+        if (this.sueldo > empleado.sueldo) return 1;
+
+        return 0;
+    }
 }
-
-
