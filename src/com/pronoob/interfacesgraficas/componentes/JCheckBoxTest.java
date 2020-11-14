@@ -8,13 +8,9 @@ import java.awt.event.ItemListener;
 import javax.swing.*;
 
 public class JCheckBoxTest extends JPanel implements ItemListener {
-	private JFrame frame;
-	private JPanel panelCheckBox;
-	private JLabel text1;
-	private JLabel text2;
-	private JLabel text3;
-	private JCheckBox boldCheckBox;
-	private JCheckBox italicsCheckBox;
+	private final JLabel text1;
+	private final JCheckBox boldCheckBox;
+	private final JCheckBox italicsCheckBox;
 	private int fontStyles;
 	
 	public JCheckBoxTest() {
@@ -23,25 +19,25 @@ public class JCheckBoxTest extends JPanel implements ItemListener {
 		text1 = new JLabel("Texto de prueba", SwingConstants.CENTER);
 		text1.setFont(new Font(Font.SERIF, Font.PLAIN, 32));
 		add(text1, BorderLayout.CENTER);
-		
-		panelCheckBox = new JPanel();
+
+		JPanel panelCheckBox = new JPanel();
 		add(panelCheckBox, BorderLayout.SOUTH);
 		
 		boldCheckBox = new JCheckBox();
 		boldCheckBox.addItemListener(this);
 		panelCheckBox.add(boldCheckBox);
-		
-		text2 = new JLabel("Negrita");
+
+		JLabel text2 = new JLabel("Negrita");
 		panelCheckBox.add(text2);
 		
 		italicsCheckBox = new JCheckBox();
 		italicsCheckBox.addItemListener(this);
 		panelCheckBox.add(italicsCheckBox);
-		
-		text3 = new JLabel("Cursiva");
+
+		JLabel text3 = new JLabel("Cursiva");
 		panelCheckBox.add(text3);
-		
-		frame = new JFrame("JCheckBox Test");
+
+		JFrame frame = new JFrame("JCheckBox Test");
 		frame.add(this);
 		frame.setSize(600, 400);
 		frame.setResizable(false);
